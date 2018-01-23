@@ -88,8 +88,8 @@ require_relative '../models/address_book'
 			print "Entry Number: "
 			selection = gets.chomp.to_i 
 			
-			if selection < @address_book.entries.count
-				puts @address_book.entries[selection]
+			if selection <= @address_book.entries.length && selection > 0
+				puts @address_book.entries[selection - 1]
 				puts "Press enter to return to the main menu"
 				gets.chomp
 				system "clear"
