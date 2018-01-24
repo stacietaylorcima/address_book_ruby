@@ -1,4 +1,5 @@
 require_relative 'entry'
+require "csv"
 	
 	class AddressBook
 		attr_reader :entries
@@ -15,8 +16,11 @@ require_relative 'entry'
 				end
 				index+= 1
 			end
-
 			entries.insert(index, Entry.new(name, phone_number, email))
+		end
+		
+		def import_from_csv(file_name)
+			
 		end
 		
 		def remove_entry(name, phone_number, email)
@@ -27,7 +31,6 @@ require_relative 'entry'
 					delete_entry = entry
 				end
 			end
-			
 			@entries.delete(delete_entry)
 		end
 	end
