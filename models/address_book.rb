@@ -39,4 +39,7 @@ require "csv"
 			end
 			@entries.delete(delete_entry)
 		end
+		
+		def binary_search(name)
+		end
 	end
