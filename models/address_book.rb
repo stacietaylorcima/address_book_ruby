@@ -61,5 +61,12 @@ require "csv"
 		end
 		
 		def interactive_search(name)
-		end 
+			entries.each do |entry|
+				if entry.name == name
+					return entry
+				end
+			end
+			
+			return nil
+		end
 	end
