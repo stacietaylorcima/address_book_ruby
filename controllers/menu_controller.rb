@@ -6,10 +6,6 @@ require_relative '../models/address_book'
 		def initialize
 			@address_book = AddressBook.new
     end
- 		
-		def demolish
-			@entries = []
-		end
 		
     def main_menu
       puts "Main Menu - #{address_book.entries.count} entries"

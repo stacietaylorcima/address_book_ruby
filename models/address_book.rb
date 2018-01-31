@@ -30,4 +30,8 @@ require_relative 'entry'
 			
 			@entries.delete(delete_entry)
 		end
+		
+		def demolish
+			@entries = []
+		end
 	end
