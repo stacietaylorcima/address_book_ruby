@@ -56,6 +56,7 @@ RSpec.describe AddressBook do
     end
   end
 	
+<<<<<<< HEAD
 	describe "#import_from_csv" do
   	it "imports the correct number of entries" do
     	book.import_from_csv("entries.csv")
@@ -217,6 +218,16 @@ RSpec.describe AddressBook do
 			book.import_from_csv("entries.csv")
 			entry = book.interactive_search("Billy")
 			expect(entry).to be_nil
+=======
+	describe "#demolish" do
+		book = AddressBook.new
+		it "should delete every entry in AddressBook" do
+			book.add_entry('Stacie Cima', '010.012.2555', 'staciecima@gmail.com')
+			book.add_entry('Todd Cima', '010.012.2555', 'todd@gmail.com')
+		
+			book.demolish
+			expect(book.entries.size).to eq 0
+>>>>>>> menu_controller
 		end
 	end
 end

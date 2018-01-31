@@ -40,6 +40,7 @@ require "csv"
 			@entries.delete(delete_entry)
 		end
 		
+<<<<<<< HEAD
 		def binary_search(name)
 			lower = 0
 			upper = entries.length - 1
@@ -68,5 +69,9 @@ require "csv"
 			end
 			
 			return nil
+=======
+		def demolish
+			@entries = []
+>>>>>>> menu_controller
 		end
 	end
