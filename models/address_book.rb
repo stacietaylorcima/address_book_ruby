@@ -59,4 +59,7 @@ require "csv"
 			
 			return nil
 		end
+		
+		def interactive_search(name)
+		end 
 	end
