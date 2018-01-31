@@ -2,8 +2,8 @@ require_relative '../models/address_book'
  
 RSpec.describe AddressBook do
 	let(:book) { AddressBook.new }
-	
-	def check_entry(entry, expected_name, expected_number, expected_email)
+
+  def check_entry(entry, expected_name, expected_number, expected_email)
     expect(entry.name).to eq expected_name
     expect(entry.phone_number).to eq expected_number
     expect(entry.email).to eq expected_email
@@ -16,16 +16,16 @@ RSpec.describe AddressBook do
 		
 		it "initializes entries as an array" do
       expect(book.entries).to be_an(Array)
-    end
+     end
  
-    it "initializes entries as empty" do
+     it "initializes entries as empty" do
        expect(book.entries.size).to eq(0)
-    end
+     end
   end
 	
 	describe "#add_entry" do
 		it "adds only one entry to the address book" do
-      book.add_entry('Ada Lovelace', '010.012.1815', 'augusta.king@lovelace.com')	
+      book.add_entry('Ada Lovelace', '010.012.1815', 'augusta.king@lovelace.com')
  
       expect(book.entries.size).to eq(1)
     end
@@ -56,8 +56,8 @@ RSpec.describe AddressBook do
     end
   end
 	
-<<<<<<< HEAD
 	describe "#import_from_csv" do
+
   	it "imports the correct number of entries" do
     	book.import_from_csv("entries.csv")
       book_size = book.entries.size
@@ -97,12 +97,13 @@ RSpec.describe AddressBook do
   end
 	
 	describe "#import_from_csv_2" do
+
   	it "imports the correct number of entries" do
     	book.import_from_csv("entries_2.csv")
       book_size = book.entries.size
  
       expect(book_size).to eq 3
-     end
+    end
 		
 		it "imports the 1st entry" do
 			book.import_from_csv("entries_2.csv")
@@ -218,16 +219,16 @@ RSpec.describe AddressBook do
 			book.import_from_csv("entries.csv")
 			entry = book.interactive_search("Billy")
 			expect(entry).to be_nil
-=======
+		end 
+	end
+
 	describe "#demolish" do
-		book = AddressBook.new
 		it "should delete every entry in AddressBook" do
 			book.add_entry('Stacie Cima', '010.012.2555', 'staciecima@gmail.com')
 			book.add_entry('Todd Cima', '010.012.2555', 'todd@gmail.com')
 		
 			book.demolish
 			expect(book.entries.size).to eq 0
->>>>>>> menu_controller
 		end
 	end
 end
