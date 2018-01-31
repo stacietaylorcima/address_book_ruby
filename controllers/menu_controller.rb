@@ -6,7 +6,11 @@ require_relative '../models/address_book'
 		def initialize
 			@address_book = AddressBook.new
     end
- 
+ 		
+		def demolish
+			@entries = []
+		end
+		
     def main_menu
       puts "Main Menu - #{address_book.entries.count} entries"
       puts "1 - View all entries"
@@ -14,7 +18,8 @@ require_relative '../models/address_book'
       puts "3 - Search for an entry"
 			puts "4 - View Entry Number"
       puts "5 - Import entries from a CSV"
-      puts "6 - Exit"
+			puts "6 - Delete ALL entries"
+      puts "7 - Exit"
       print "Enter your selection: "
  
       selection = gets.to_i
@@ -40,7 +45,12 @@ require_relative '../models/address_book'
           system "clear"
           read_csv
           main_menu
-        when 6
+				when 6
+					system "clear" 
+					@address_book.demolish
+					puts "All entries have been deleted"
+					main_menu
+        when 7
           puts "Good-bye!"
 
          exit(0)

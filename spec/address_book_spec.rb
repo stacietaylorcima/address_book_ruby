@@ -53,4 +53,15 @@ RSpec.describe AddressBook do
 			expect(book.entries.first.name).to eq('Stacie Cima')
     end
   end
+	
+	describe "#demolish" do
+		book = AddressBook.new
+		it "should delete every entry in AddressBook" do
+			book.add_entry('Stacie Cima', '010.012.2555', 'staciecima@gmail.com')
+			book.add_entry('Todd Cima', '010.012.2555', 'todd@gmail.com')
+		
+			book.demolish
+			expect(book.entries.size).to eq 0
+		end
+	end
 end
