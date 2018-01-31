@@ -9,21 +9,21 @@ RSpec.describe AddressBook do
     expect(entry.email).to eq expected_email
   end
 	
-	describe "attributes" do
+  describe "attributes" do
 		it "responds to entries" do
       expect(book).to respond_to(:entries)
     end
 		
 		it "initializes entries as an array" do
       expect(book.entries).to be_an(Array)
-     end
+    end
  
-     it "initializes entries as empty" do
+    it "initializes entries as empty" do
        expect(book.entries.size).to eq(0)
-     end
+    end
   end
 	
-	describe "#add_entry" do
+  describe "#add_entry" do
 		it "adds only one entry to the address book" do
       book.add_entry('Ada Lovelace', '010.012.1815', 'augusta.king@lovelace.com')
  
@@ -40,7 +40,7 @@ RSpec.describe AddressBook do
     end
   end
 	
-	describe "#remove_entry" do
+  describe "#remove_entry" do
 		it "removes only one entry from the address book using name, phone_number, and email_address" do
       book.add_entry('Stacie Cima', '010.012.2555', 'staciecima@lovelace.com')
  
@@ -57,13 +57,12 @@ RSpec.describe AddressBook do
   end
 	
 	describe "#import_from_csv" do
-
   	it "imports the correct number of entries" do
     	book.import_from_csv("entries.csv")
       book_size = book.entries.size
  
       expect(book_size).to eq 5
-     end
+    end
 		
 		it "imports the 1st entry" do
 			book.import_from_csv("entries.csv")
@@ -97,7 +96,6 @@ RSpec.describe AddressBook do
   end
 	
 	describe "#import_from_csv_2" do
-
   	it "imports the correct number of entries" do
     	book.import_from_csv("entries_2.csv")
       book_size = book.entries.size
